@@ -904,3 +904,7 @@ smtp_sasl_password_maps = hash:{{ postfix_smtp_sasl_password_map }}
 smtp_sasl_security_options = {{ postfix_smtp_sasl_security_options }}
 {% endif %}
 smtp_tls_wrappermode = {{ postfix_smtp_tls_wrappermode | ternary('yes', 'no') }}
+
+{% if postfix_smtpd_upstream_proxy_protocol is defined %}
+smtpd_upstream_proxy_protocol = {{ postfix_smtpd_upstream_proxy_protocol }}
+{% endif %}
