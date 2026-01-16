@@ -230,4 +230,4 @@ postfix_smtp_sasl_password_map: ""
 postfix_smtp_sasl_security_options: ""
 postfix_smtp_tls_wrappermode: false
 postfix_smtp_sasl_password_map_content: ""
-postfix_smtpd_upstream_proxy_protocol_haproxy_enabled: false
+# postfix_smtpd_upstream_proxy_protocol: haproxy
