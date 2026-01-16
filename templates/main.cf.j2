@@ -326,7 +326,9 @@ mynetworks = {{ _postfix_mynetworks | trim }}
 relay_domains = {{ _postfix_relay_domains | trim }}
 {% endif %}
 
-smtpd_recipient_restrictions = {{ _postfix_smtpd_recipient_restrictions | trim }}
+#smtpd_recipient_restrictions = {{ _postfix_smtpd_recipient_restrictions | trim }}
+#TD ive had to hardcode this as the logic was producting "None" ie smtpd_recipient_restrictions = None permit_mynetworks, permit_sasl_authenticated, reject_unauth_destination, reject_invalid_hostname, reject_non_fqdn_hostname, reject_non_fqdn_sender, reject_non_fqdn_recipient, reject_unknown_sender_domain, reject_unknown_recipient_domain, reject_rbl_client sbl.spamhaus.org, reject_rbl_client cbl.abuseat.org, reject_rbl_client dul.dnsbl.sorbs.net, permit
+smtpd_recipient_restrictions = permit_mynetworks, permit_sasl_authenticated, reject_unauth_destination, reject_invalid_hostname, reject_non_fqdn_hostname, reject_non_fqdn_sender, reject_non_fqdn_recipient, reject_unknown_sender_domain, reject_unknown_recipient_domain, reject_rbl_client sbl.spamhaus.org, reject_rbl_client cbl.abuseat.org, reject_rbl_client dul.dnsbl.sorbs.net, permit
 
 smtpd_sender_restrictions = {{ _postfix_smtpd_sender_restrictions | trim }}
 
